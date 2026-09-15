@@ -1,0 +1,12 @@
+[
+  {
+    "domain": "supabase.com",
+    "status": "failed",
+    "error": "Error code: 413 - {'error': {'message': 'Request too large for model `openai/gpt-oss-20b` in organization `org_01kyw7bgy1e2gtkb6ypmv74cxj` service tier `on_demand` on tokens per minute (TPM): Limit 8000, Requested 8065, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "company_overview": "",
+    "target_audience_icp": "",
+    "contact_points": [],
+    "leadership": [],
+    "confidence_score": 0.0
+  }
+]
