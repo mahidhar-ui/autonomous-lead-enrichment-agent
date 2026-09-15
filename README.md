@@ -1,38 +1,51 @@
 # Autonomous Lead Enrichment Agent
 
-A Python-based autonomous lead enrichment agent that crawls public company websites, extracts useful business information, and uses an LLM to generate structured company intelligence.
+An AI-powered Python agent that automatically crawls public company websites, extracts useful business information, and uses an LLM to generate structured company intelligence.
 
-## Project Objective
+The system accepts one or more company domains as input and produces structured JSON output containing:
 
-The objective of this project is to automate the process of researching companies from their public websites.
+- Company Overview
+- Target Audience / Ideal Customer Profile (ICP)
+- Public Contact Emails
+- Key Leadership / Team Members
+- LinkedIn Profile URLs
+- Data Confidence Score
 
-The agent accepts one or more company domains as input and attempts to:
+---
 
-- Crawl the company homepage and relevant subpages
-- Extract clean webpage text instead of sending raw HTML to the LLM
-- Identify company information
-- Extract public contact emails
-- Identify target audience / Ideal Customer Profile (ICP)
-- Extract leadership and team information
-- Find LinkedIn URLs when available
-- Generate a confidence score
-- Handle website failures without stopping the complete process
+## Features
 
-## Test Companies
+- Automated website crawling using Playwright
+- Headless browser automation for JavaScript-rendered websites
+- Discovers relevant company pages such as:
+  - Homepage
+  - About
+  - Company
+  - Team
+  - Contact
+  - Pricing
+  - Customers
+  - Solutions
+  - Products
+- Extracts clean webpage text instead of sending raw HTML to the LLM
+- Removes unnecessary scripts, CSS, SVG and navigation content
+- Uses Pydantic models for structured LLM output
+- Extracts publicly available contact emails
+- Extracts leadership/team information
+- Extracts LinkedIn profile URLs when available
+- Generates a confidence score between 0.0 and 1.0
+- Handles website failures and timeouts without stopping the entire pipeline
+- Supports processing multiple company domains
+- Saves results in JSON format
 
-The solution was tested against:
+---
 
-1. postman.com
-2. supabase.com
-3. vapi.ai
-
-## Project Structure
+## Project Architecture
 
 ```text
 autonomous-lead-enrichment-agent/
 │
 ├── src/
-│   ├── __init__.py
 │   ├── config.py
 │   ├── extractor.py
 │   ├── main.py
@@ -50,5 +63,4 @@ autonomous-lead-enrichment-agent/
 ├── output.json
 ├── postman_test.html
 ├── supabase_test.html
-├── vapi_test.html
-└── test_supabase.json
+└── vapi_test.html
